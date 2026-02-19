@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dream House</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+<body>
+   
+<a-scene>
+    <a-assets>
+   
+    <a-asset-item id="pottedplant1" src="assets/models/Houseplant.glb"></a-asset-item>
+    <a-asset-item id="pottedplant2" src="assets/models/Flower Pot.glb"></a-asset-item>
+    <a-asset-item id="pottedplant3" src="assets/models/Fiddle-leaf Plant.glb"></a-asset-item>
+    <a-asset-item id="bed" src="assets/models/Bed.glb"></a-asset-item>
+    <a-asset-item id="shelf1" src="assets/models/Shelf.glb"></a-asset-item>
+    <a-asset-item id="shelf2" src="assets/models/Shelf Small.glb"></a-asset-item>
+    <a-asset-item id="sofa1" src="assets/models/Couch Medium.glb"></a-asset-item>
+    <a-asset-item id="sofa2" src="assets/models/Couch Small.glb"></a-asset-item>
+    <a-asset-item id="tv" src="assets/models/Flat-screen TV.glb"></a-asset-item>
+    <a-asset-item id="kitchen" src="assets/models/Kitchen.glb"></a-asset-item>
+    <a-asset-item id="light1" src="assets/models/Light bulb.glb"></a-asset-item>
+    <a-asset-item id="light2" src="assets/models/Bedside Lamp.glb"></a-asset-item>
+    <a-asset-item id="books" src="assets/models/Books.glb"></a-asset-item>
+    <a-asset-item id="shoes1" src="assets/models/Slippers.glb"></a-asset-item>
+    <a-asset-item id="shoes2" src="assets/models/Pair of shoes.glb"></a-asset-item>
+    <a-asset-item id="shoes3" src="assets/models/Sneakers.glb"></a-asset-item>
+    <a-asset-item id="cloths" src="assets/models/Towels.glb"></a-asset-item>
+    <a-asset-item id="shirts" src="assets/models/T-Shirts - folded.glb"></a-asset-item>
+    <a-asset-item id="towel" src="assets/models/Rolls of towels.glb"></a-asset-item>
+    <a-asset-item id="dresser" src="assets/models/Dresser.glb"></a-asset-item>
+    <a-asset-item id="poolchair" src="assets/models/Teal Chaise Lounge Chair.glb"></a-asset-item>
+    <a-asset-item id="pool" src="assets/models/pool.glb"></a-asset-item>
+    <a-asset-item id="rubber" src="assets/models/Rubber Duck Pool Toy.glb"><a-asset-item>
+    <a-asset-item id="water" src="assets/models/water.glb"><a-asset-item>
+    <a-asset-item id="dome" src="assets/models/dome.glb"><a-asset-item>
+    <a-asset-item id="roof" src="assets/models/Roof Flat Patch.glb"><a-asset-item>
+    <a-asset-item id="grass" src="assets/models/Grass Patch.glb"></a-asset-item>
+    <a-asset-item id="trees1" src="assets/models/Palm Trees.glb"></a-asset-item>
+    <a-asset-item id="trees2" src="assets/models/Trees.glb"></a-asset-item>
+    <a-asset-item id="tree" src="assets/models/Big Tree.glb"></a-asset-item>
+    <a-asset-item id="rock" src="assets/models/Rock Flat Grass.glb"></a-asset-item>
+    <a-asset-item id="car" src="assets/models/Chevrolet Camaro.glb"></a-asset-item>
+    <a-asset-item id="table" src="assets/models/Table.glb "></a-asset-item>
+    <a-asset-item id="glassPane" src="assets/models/Window.glb"></a-asset-item>
+
+
+  </a-assets>
+     <!-- ===== LIGHTING ===== -->
+
+  <a-light type="ambient" intensity="0.8"></a-light>
+  <a-light type="directional" position="5 10 7" intensity="1"></a-light>
+
+  <!-- Camera -->
+  <a-entity id="rig" position="-50 40 150">
+    <a-entity camera look-controls wasd-controls></a-entity>
+  </a-entity>
+
+  <!-- Sky -->
+  <a-sky color="#BFDFFF" rotation="0 -130 0"></a-sky>
+
+  <!-- Ground -->
+  <a-plane rotation="-90 0 0" width="400" height="400" color="#7BC96F"></a-plane>
+
+  <!-- ===== HOUSE STRUCTURE ===== -->
+
+  <!-- Floor -->
+  <a-box position="0 0.05 0" width="180" height="2" depth="180" color="#D9B382"></a-box>
+
+  <!-- Walls -->
+  <a-box position="17.883 26.327 -61.824" width="144" height="50" depth="0.2" color="#ed333b"></a-box>
+  <a-box position="-54.162 26.245 -50.37" width="0.2" height="50" depth="23" color="#F5F5F5"></a-box>
+  <a-box position="-55.329 25.312 36.77232" width="0.2" height="50" depth="90" color="#F5F5F5" material="" geometry="depth: 105" visible=""></a-box>
+  <a-box position="89.787 26.092 8.172" width="0.2" height="50" depth="140" color="#F5F5F5"></a-box>
+
+   <a-entity gltf-model="#glassPane" position="-57.132 25.585 -26.997" scale="10 15.8 10" rotation="0 90 0"></a-entity>
+
+
+   <a-box position="29.86337 26.00121 88.8669" width="144" height="50" depth="0.2" color="#ed333b" material="" geometry="width: 120"></a-box>
+
+   <a-entity gltf-model="#glassPane" position="-43.47146 25.585 92.02699" scale="10 15.8 10" rotation="0 -180 0"></a-entity>
+
+  
+    <!-- Bedroom Divider -->
+   <a-box position="44.934 25.125 -41.370" width="1" height="50" depth="40" color="#ed333b"></a-box>
+
+   
+   <a-entity gltf-model="#dresser" position="-121.47038 24.09269 -76.076" scale="0.5 0.5 0.5" rotation="-180 0 0"></a-entity>
+
+
+   
+
+   <a-entity gltf-model="#roof" position="17.60514 50.35603 15.25328" scale="146.18305 35 146.18305"></a-entity>
+
+   <a-entity gltf-model="#light1" position="11.962 42.230 40.102" scale="1 1 1"></a-entity>
+  
+
+   <a-entity gltf-model="#light1" position="8.031 42.953 41.006" scale="1 1 1"></a-entity>
+
+   <a-entity gltf-model="#light1" position="9.916 41.519 45.725" scale="1 1 1"></a-entity>
+
+
+   
+
+
+
+  <a-entity gltf-model="#bed" position="23.134 0.268 -40.585" scale="20 20 20 " rotation="0 270 0"></a-entity>
+  <a-entity gltf-model="#shelf1" position="-29.068 18.581 -56.440" scale="20 20 20"  rotation="0 90 0"></a-entity>
+  <a-entity gltf-model="#books" position="-37.066 21.355 -55.678" scale="50 50 50" rotation="0 180 0" ></a-entity>
+  <a-entity gltf-model="#light2" position="-42.693 34.098 -58.032" scale="15 15 15" ></a-entity>
+   <a-entity gltf-model="#pottedplant3" position="-42.960 21.210 -54.808" scale="0.9 0.9 0.9 "></a-entity>
+   <a-entity gltf-model="#towel" position="-35.156 13.072 -57.610" scale="0.07 0.07 0.07"></a-entity>
+   <a-entity gltf-model="#cloths" position="-21.771 13.724 -55.737" scale="6 6 6 "></a-entity>
+   <a-entity gltf-model="#shirts" position="-27.461 14.001 -53.560" scale="7 7 7 "></a-entity>
+   <a-entity gltf-model="#shoes1" position="-18.776 4.788 -56.007" scale="7 7 7 "></a-entity>
+   <a-entity gltf-model="#shoes2" position="-10.344 5.979 -56.513" scale="2.5 2.5 2.5 "></a-entity>
+   <a-entity gltf-model="#shoes3" position="-25.487 4.867 -56.769" scale="0.02 0.02 0.02 "></a-entity>
+   <a-entity gltf-model="#kitchen" position="74.8344 17.774 58.621" scale="30 30 30" rotation="0 -90 0"></a-entity>
+   <a-entity gltf-model="#trees1" position="142 -0.674 -795.40" scale="7 7 7" rotation="0 -90 0"></a-entity>
+    <a-entity gltf-model="#rock" position="122.281 -0.475 -152.46" scale="30 30 30" rotation="0 -90 0"></a-entity>
+   <a-entity gltf-model="#tree" position="120.862 24.240 -147.91" scale="15 15 15" rotation="0 -90 0"></a-entity>
+   <a-entity gltf-model="#car" position="-20.771 -4.503 -137.96" scale="15 15 15" rotation="0 -90 0"></a-entity>
+   <a-entity gltf-model="#shelf2" position="-43.112 0.717 39.934" scale="20 20 20" rotation="0 90 0"></a-entity>
+   <a-entity gltf-model="#tv" position="-42.503 8.179 39.557" scale="9 9 9"></a-entity>
+   <a-entity gltf-model="#sofa1" position="12.488 0.268 38.542" scale="6 6 6" rotation="0 -90 0"></a-entity>
+    <a-entity gltf-model="#sofa2" position="-11.002 0.594 3.654" scale="6 6 6"></a-entity>
+    <a-entity gltf-model="#fan" position="-11.002 0.594 3.654" scale="6 6 6"></a-entity>
+    <a-entity gltf-model="#table" position="-19.787 0.594 3.654" scale="7 7 7"></a-entity>
+    <a-entity gltf-model="#poolchair" position="-72.865 4.378 8.087" scale="30 30 30"></a-entity>
+    <a-entity gltf-model="#poolchair" position="-72.865 4.378 30.421" scale="30 30 30"></a-entity>
+    <a-entity gltf-model="#pool" position="-135.97931 1.9568 -22.705" scale="8.29126 8.29126 8.29126"></a-entity>a-entity>
+    ></a-entity>a-entity>
+    <a-entity gltf-model="#rubber" position="-132.3 6.2204 19.26389" scale="2 2 2"></a-entity>
+</a-scene>
+</body>
+</html>
