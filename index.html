@@ -4,6 +4,28 @@
   <meta charset="utf-8">
   <title>Dream House</title>
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-environment-component@1.3.4/dist/aframe-environment-component.min.js"></script>
+  <script>
+AFRAME.registerComponent('force-water-material', {
+  init: function () {
+    this.el.addEventListener('model-loaded', () => {
+      const model = this.el.getObject3D('mesh');
+      model.traverse((node) => {
+        if (node.isMesh) {
+          node.material = new THREE.MeshStandardMaterial({
+            color: 0x1CA3EC,
+            metalness: 0.6,
+            roughness: 0.1,
+            transparent: true,
+            opacity: 0.5
+          });
+        }
+      });
+    });
+  }
+});
+</script>
 </head>
 <body>
    
@@ -44,21 +66,31 @@
     <a-asset-item id="car" src="assets/models/Chevrolet Camaro.glb"></a-asset-item>
     <a-asset-item id="table" src="assets/models/Table.glb "></a-asset-item>
     <a-asset-item id="glassPane" src="assets/models/Window.glb"></a-asset-item>
+    <a-asset-item id="waterani" src="assets/models/water_animation.glb"></a-asset-item>
+    <a-asset-item id="hdr" src="assets/sky.hdr"></a-asset-item>
+
+    
+
 
 
   </a-assets>
+  
      <!-- ===== LIGHTING ===== -->
 
   <a-light type="ambient" intensity="0.8"></a-light>
   <a-light type="directional" position="5 10 7" intensity="1"></a-light>
+
+ 
 
   <!-- Camera -->
   <a-entity id="rig" position="-50 40 150">
     <a-entity camera look-controls wasd-controls></a-entity>
   </a-entity>
 
+    
+
   <!-- Sky -->
-  <a-sky color="#BFDFFF" rotation="0 -130 0"></a-sky>
+  <a-sky color="#87cefa " rotation="0 -130 0"></a-sky>
 
   <!-- Ground -->
   <a-plane rotation="-90 0 0" width="400" height="400" color="#7BC96F"></a-plane>
@@ -91,7 +123,7 @@
 
    
 
-   <a-entity gltf-model="#roof" position="17.60514 50.35603 15.25328" scale="146.18305 35 146.18305"></a-entity>
+   <a-entity gltf-model="#roof" position="17.60514 50.35603 15.25328" scale="146.18305 37.0 146.18305"></a-entity>
 
    <a-entity gltf-model="#light1" position="11.962 42.230 40.102" scale="1 1 1"></a-entity>
   
@@ -129,9 +161,11 @@
     <a-entity gltf-model="#table" position="-19.787 0.594 3.654" scale="7 7 7"></a-entity>
     <a-entity gltf-model="#poolchair" position="-72.865 4.378 8.087" scale="30 30 30"></a-entity>
     <a-entity gltf-model="#poolchair" position="-72.865 4.378 30.421" scale="30 30 30"></a-entity>
-    <a-entity gltf-model="#pool" position="-135.97931 1.9568 -22.705" scale="8.29126 8.29126 8.29126"></a-entity>a-entity>
-    ></a-entity>a-entity>
-    <a-entity gltf-model="#rubber" position="-132.3 6.2204 19.26389" scale="2 2 2"></a-entity>
+    <a-entity gltf-model="#pool" position="-135.97931 3.373 -22.705" scale="8.29126 8.29126 8.29126"></a-entity>
+    <a-entity gltf-model="#waterani" position="-135.97931 3.844 -22.705"scale="0.844 0.844 0.844" 
+    animation-mixer force-water-material></a-entity>
+
+        <a-entity gltf-model="#rubber" position="-132.3 7.208 19.26389" scale="2 2 2"></a-entity>
 </a-scene>
 </body>
 </html>
